@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:weightSum="5">
 
@@ -56,39 +55,37 @@
             android:textColor="@android:color/black"
             android:textSize="12sp"/>
 
-        <!--<smack.sample.com.smacktest.ParentHorizontalScrollView-->
-            <!--android:id="@+id/horizontalScrollView"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:fadeScrollbars="false"-->
-            <!--android:fillViewport="true"-->
-            <!--android:scrollbars="horizontal">-->
-
-        <android.support.v4.widget.NestedScrollView
+        <smack.sample.com.smacktest.ScrollbarVerticalThumbView
+            android:id="@+id/fast_scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:theme="@style/ThemeOverlay.AppCompat.Light"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <smack.sample.com.smacktest.ParentHorizontalScrollView
+                android:id="@+id/horizontalScrollView"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:fadeScrollbars="false"
+                android:fillViewport="true"
+                android:scrollbars="horizontal">
 
-                <!--<include layout="@layout/console_view"/>-->
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/console_listView"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:background="@android:color/black"
-                    android:dividerHeight="@null"/>
-            </LinearLayout>
-        <!--</smack.sample.com.smacktest.ParentHorizontalScrollView>-->
-        </android.support.v4.widget.NestedScrollView>
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!--<include layout="@layout/console_view"/>-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/console_listView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@android:color/black"
+                        android:dividerHeight="@null"/>
+                </LinearLayout>
+            </smack.sample.com.smacktest.ParentHorizontalScrollView>
+        </smack.sample.com.smacktest.ScrollbarVerticalThumbView>
     </LinearLayout>
 
 </LinearLayout>
